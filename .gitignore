@@ -4,3 +4,4 @@ node_modules
 *log
 client/dist
 client/dist/bundle.js
+npm-debug.log.3894322947
