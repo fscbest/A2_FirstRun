@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./course.service", "./auto-grow.directive"], function(exports_1, context_1) {
+System.register(['angular2/core', "./author.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,46 +10,41 @@ System.register(['angular2/core', "./course.service", "./auto-grow.directive"], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_service_1, auto_grow_directive_1;
-    var CourseComponent;
+    var core_1, author_service_1;
+    var AuthorComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (course_service_1_1) {
-                course_service_1 = course_service_1_1;
-            },
-            function (auto_grow_directive_1_1) {
-                auto_grow_directive_1 = auto_grow_directive_1_1;
+            function (author_service_1_1) {
+                author_service_1 = author_service_1_1;
             }],
         execute: function() {
-            let CourseComponent = class CourseComponent {
-                constructor(courseService) {
-                    this.title = "the title of course page";
-                    this.courses = courseService.getCourses();
+            let AuthorComponent = class AuthorComponent {
+                constructor(authorService) {
+                    this.title = "the title of author page";
+                    this.authors = authorService.getAuthors();
                 }
             };
-            CourseComponent = __decorate([
+            AuthorComponent = __decorate([
                 core_1.Component({
-                    selector: 'courses',
+                    selector: 'authors',
                     template: `
-        <h1>Courses</h1>
+        <h1>Authors</h1>
         {{title}}
-        <input type="text" autoGrow>
         <ul>
-            <li *ngFor = "#course of courses">
-                {{ course }}
+            <li *ngFor = "#author of authors">
+                {{ author }}
             </li>
         </ul>
         `,
-                    providers: [course_service_1.CourseService],
-                    directives: [auto_grow_directive_1.AutoGrowDirective]
+                    providers: [author_service_1.AuthorService]
                 }), 
-                __metadata('design:paramtypes', [course_service_1.CourseService])
-            ], CourseComponent);
-            exports_1("CourseComponent", CourseComponent);
+                __metadata('design:paramtypes', [author_service_1.AuthorService])
+            ], AuthorComponent);
+            exports_1("AuthorComponent", AuthorComponent);
         }
     }
 });
-//# sourceMappingURL=course.component.js.map
+//# sourceMappingURL=author.component.js.map
