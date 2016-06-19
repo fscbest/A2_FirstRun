@@ -40,14 +40,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             GlIconComponent = __decorate([
                 core_1.Component({
                     selector: 'starr',
-                    template: `
-        <h2>Star</h2>
-       <i class="glyphicon"
-           [class.glyphicon-star]="isFavorite"
-           [class.glyphicon-star-empty]="!isFavorite"
-           (click)="onClick()">
-       </i>
-        `
+                    templateUrl: 'app/glicon.template.html'
                 }), 
                 __metadata('design:paramtypes', [])
             ], GlIconComponent);
