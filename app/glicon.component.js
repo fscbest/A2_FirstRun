@@ -40,7 +40,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             GlIconComponent = __decorate([
                 core_1.Component({
                     selector: 'starr',
-                    templateUrl: 'app/glicon.template.html'
+                    templateUrl: 'app/glicon.template.html',
+                    styles: [`
+    .glyphicon-star{
+        color: orange;
+    `]
                 }), 
                 __metadata('design:paramtypes', [])
             ], GlIconComponent);
