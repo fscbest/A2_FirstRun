@@ -11,37 +11,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var HeartComponent;
+    var VoteComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let HeartComponent = class HeartComponent {
+            let VoteComponent = class VoteComponent {
                 constructor() {
-                    this.totalLikes = 0;
-                    this.iLike = false;
+                    this.votes = 50;
                 }
-                onClick() {
-                    this.iLike = !this.iLike;
-                    this.totalLikes += this.iLike ? 1 : -1;
+                onUpClicked() {
+                    this.votes += 1;
                 }
-                ;
+                onDownClicked() {
+                    this.votes -= 1;
+                }
             };
-            __decorate([
-                core_1.Input(), 
-                __metadata('design:type', Object)
-            ], HeartComponent.prototype, "totalLikes", void 0);
-            __decorate([
-                core_1.Input(), 
-                __metadata('design:type', Object)
-            ], HeartComponent.prototype, "iLike", void 0);
-            HeartComponent = __decorate([
+            VoteComponent = __decorate([
                 core_1.Component({
-                    selector: 'heart',
-                    templateUrl: 'app/heart.template.html',
+                    selector: 'vote',
+                    templateUrl: 'app/vote.template.html',
                     styles: [`
+    .vote-all{
+        width: 20px;
+     }
     .glyphicon-heart{
         color: #ccc;
         cursor: pointer;
@@ -52,9 +47,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     `]
                 }), 
                 __metadata('design:paramtypes', [])
-            ], HeartComponent);
-            exports_1("HeartComponent", HeartComponent);
+            ], VoteComponent);
+            exports_1("VoteComponent", VoteComponent);
         }
     }
 });
-//# sourceMappingURL=heart.component.js.map
+//# sourceMappingURL=vote.component.js.map

@@ -9,7 +9,7 @@ import {Component, Input, Output, EventEmitter } from 'angular2/core'
         cursor: pointer;
     }
     .highlighted{
-        color: deeppink; 
+        color: deeppink;
     }
     `]
 })
