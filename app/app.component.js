@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./courses.component", "./authors.component", "./glicon.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "./courses.component", "./authors.component", "./glicon.component", "./heart.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, glicon_component_1;
+    var core_1, courses_component_1, authors_component_1, glicon_component_1, heart_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,13 +25,18 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
             },
             function (glicon_component_1_1) {
                 glicon_component_1 = glicon_component_1_1;
+            },
+            function (heart_component_1_1) {
+                heart_component_1 = heart_component_1_1;
             }],
         execute: function() {
             let AppComponent = class AppComponent {
                 constructor() {
                     this.post = {
                         title: "Title",
-                        isFavorite: true
+                        isFavorite: true,
+                        iLike: false,
+                        totalLikes: 10
                     };
                 }
                 onFavoriteChange($event) {
@@ -50,9 +55,10 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
     <courses></courses>
     <authors></authors>
     <starr [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></starr>
+    <heart [totalLikes]="post.totalLikes" [iLike]="post.iLike"></heart>
     <button class="btn btn-primary" (click)="onClick($event)">Submit</button>
     `,
-                    directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, glicon_component_1.GlIconComponent]
+                    directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, glicon_component_1.GlIconComponent, heart_component_1.HeartComponent]
                 }), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);

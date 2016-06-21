@@ -11,46 +11,50 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var GlIconComponent;
+    var HeartComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let GlIconComponent = class GlIconComponent {
+            let HeartComponent = class HeartComponent {
                 constructor() {
-                    this.isFavorite = false;
-                    this.change = new core_1.EventEmitter();
+                    this.totalLikes = 0;
+                    this.iLike = false;
                 }
                 onClick() {
-                    this.isFavorite = !this.isFavorite;
-                    this.change.emit({ newValue: this.isFavorite });
+                    this.iLike = !this.iLike;
+                    this.totalLikes += this.iLike ? 1 : -1;
                 }
                 ;
             };
             __decorate([
-                core_1.Input('is-favorite'), 
+                core_1.Input(), 
                 __metadata('design:type', Object)
-            ], GlIconComponent.prototype, "isFavorite", void 0);
+            ], HeartComponent.prototype, "totalLikes", void 0);
             __decorate([
-                core_1.Output(), 
+                core_1.Input(), 
                 __metadata('design:type', Object)
-            ], GlIconComponent.prototype, "change", void 0);
-            GlIconComponent = __decorate([
+            ], HeartComponent.prototype, "iLike", void 0);
+            HeartComponent = __decorate([
                 core_1.Component({
-                    selector: 'starr',
-                    templateUrl: 'app/glicon.template.html',
+                    selector: 'heart',
+                    templateUrl: 'app/heart.template.html',
                     styles: [`
-    .glyphicon-star{
-        color: orange;
+    .glyphicon-heart{
+        color: #ccc;
+        cursor: pointer;
+    }
+    .highlighted{
+        color: deeppink; 
     }
     `]
                 }), 
                 __metadata('design:paramtypes', [])
-            ], GlIconComponent);
-            exports_1("GlIconComponent", GlIconComponent);
+            ], HeartComponent);
+            exports_1("HeartComponent", HeartComponent);
         }
     }
 });
-//# sourceMappingURL=glicon.component.js.map
+//# sourceMappingURL=heart.component.js.map

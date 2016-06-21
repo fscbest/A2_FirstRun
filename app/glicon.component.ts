@@ -6,6 +6,7 @@ import {Component, Input, Output, EventEmitter } from 'angular2/core'
     styles: [`
     .glyphicon-star{
         color: orange;
+    }
     `]
 })
 

@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {CoursesComponent} from "./courses.component";
 import {AuthorsComponent} from "./authors.component";
 import {GlIconComponent} from "./glicon.component";
+import {HeartComponent} from "./heart.component";
 
 @Component({
     selector: 'my-app',
@@ -10,14 +11,17 @@ import {GlIconComponent} from "./glicon.component";
     <courses></courses>
     <authors></authors>
     <starr [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></starr>
+    <heart [totalLikes]="post.totalLikes" [iLike]="post.iLike"></heart>
     <button class="btn btn-primary" (click)="onClick($event)">Submit</button>
     `,
-    directives: [CoursesComponent, AuthorsComponent, GlIconComponent]
+    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent]
 })
 export class AppComponent {
     post = {
         title: "Title",
-        isFavorite: true
+        isFavorite: true,
+        iLike: false,
+        totalLikes: 10
     }
 
     onFavoriteChange($event){
