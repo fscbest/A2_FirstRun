@@ -4,26 +4,30 @@ import {AuthorsComponent} from "./authors.component";
 import {GlIconComponent} from "./glicon.component";
 import {HeartComponent} from "./heart.component";
 import {VoteComponent} from "./vote.component";
+import {TwitterComponent} from "./twitter.component";
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>Hello My First Angular 2 App</h1>
-    <courses></courses>
-    <authors></authors>
-    <vote></vote>
-    <starr [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></starr>
-    <heart [totalLikes]="post.totalLikes" [iLike]="post.iLike"></heart>
-    <button class="btn btn-primary" (click)="onClick($event)">Submit</button>
-    `,
-    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent, VoteComponent]
+    templateUrl: 'app/app.twitter.template.html',
+    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent, VoteComponent, TwitterComponent]
 })
+
 export class AppComponent {
     post = {
         title: "Title",
         isFavorite: true,
         iLike: false,
         totalLikes: 10
+    };
+
+    vote = {
+        voteCount: 40,
+        myVote: 0
+    };
+
+    onVoteChange($event){
+        console.log("The vote value is: ", $event.newValue);
+        console.log("The total vote count is: ", this.vote.voteCount + $event.newValue);
     }
 
     onFavoriteChange($event){

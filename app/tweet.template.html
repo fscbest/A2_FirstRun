@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src={{tweet.imageUrl}} alt="100x100">
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="media-heading">
+                    <strong>{{tweet.authorName}}</strong>
+                    <span>{{tweet.handler}}</span>
+                </div>
+
+                {{tweet.message}}
+                <div>
+                    <heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

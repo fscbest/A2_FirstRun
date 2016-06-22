@@ -1,6 +1,12 @@
 <div class="vote-all">
     <h2>Vote</h2>
-    <i class="glyphicon glyphicon-menu-up" (click)="onUpClicked()"></i>
-    <span style = "color:black">{{ votes }}</span>
-    <i class="glyphicon glyphicon-menu-down"  (click)="onDownClicked()"></i>
+    <i class="glyphicon glyphicon-menu-up glyphicon-menu-cursor"
+       [class.highlighted]="myVote == 1"
+       (click)="onUpClicked()">
+    </i>
+    <span class="vote-count">{{ voteCount + myVote }}</span>
+    <i class="glyphicon glyphicon-menu-down glyphicon-menu-cursor"
+       [class.highlighted]="myVote == -1"
+       (click)="onDownClicked()">
+    </i>
 </div>

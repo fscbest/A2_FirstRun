@@ -20,15 +20,38 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             let VoteComponent = class VoteComponent {
                 constructor() {
-                    this.votes = 50;
+                    this.voteCount = 0;
+                    this.myVote = 0;
+                    this.change = new core_1.EventEmitter();
                 }
                 onUpClicked() {
-                    this.votes += 1;
+                    if (this.myVote < 1) {
+                        this.myVote++;
+                        this.updateMyVoteFlags();
+                    }
                 }
                 onDownClicked() {
-                    this.votes -= 1;
+                    if (this.myVote > -1) {
+                        this.myVote--;
+                        this.updateMyVoteFlags();
+                    }
+                }
+                updateMyVoteFlags() {
+                    this.change.emit({ newValue: this.myVote });
                 }
             };
+            __decorate([
+                core_1.Input('vote-count'), 
+                __metadata('design:type', Object)
+            ], VoteComponent.prototype, "voteCount", void 0);
+            __decorate([
+                core_1.Input('my-vote'), 
+                __metadata('design:type', Object)
+            ], VoteComponent.prototype, "myVote", void 0);
+            __decorate([
+                core_1.Output(), 
+                __metadata('design:type', Object)
+            ], VoteComponent.prototype, "change", void 0);
             VoteComponent = __decorate([
                 core_1.Component({
                     selector: 'vote',
@@ -36,13 +59,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     styles: [`
     .vote-all{
         width: 20px;
+        text-align: center;
+        color: #999;
      }
-    .glyphicon-heart{
-        color: #ccc;
+     .glyphicon-menu-cursor{
         cursor: pointer;
-    }
+     }
     .highlighted{
-        color: deeppink;
+        color: orange;
+    }
+    .vote-count{
+        font-size: 1.3em;
     }
     `]
                 }), 

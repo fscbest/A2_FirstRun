@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./courses.component", "./authors.component", "./glicon.component", "./heart.component", "./vote.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "./courses.component", "./authors.component", "./glicon.component", "./heart.component", "./vote.component", "./twitter.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, glicon_component_1, heart_component_1, vote_component_1;
+    var core_1, courses_component_1, authors_component_1, glicon_component_1, heart_component_1, vote_component_1, twitter_component_1;
     var AppComponent;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
             },
             function (vote_component_1_1) {
                 vote_component_1 = vote_component_1_1;
+            },
+            function (twitter_component_1_1) {
+                twitter_component_1 = twitter_component_1_1;
             }],
         execute: function() {
             let AppComponent = class AppComponent {
@@ -41,6 +44,14 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
                         iLike: false,
                         totalLikes: 10
                     };
+                    this.vote = {
+                        voteCount: 40,
+                        myVote: 0
+                    };
+                }
+                onVoteChange($event) {
+                    console.log("The vote value is: ", $event.newValue);
+                    console.log("The total vote count is: ", this.vote.voteCount + $event.newValue);
                 }
                 onFavoriteChange($event) {
                     console.log("The isFavorite value is: ", $event.newValue);
@@ -53,16 +64,8 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
             AppComponent = __decorate([
                 core_1.Component({
                     selector: 'my-app',
-                    template: `
-    <h1>Hello My First Angular 2 App</h1>
-    <courses></courses>
-    <authors></authors>
-    <vote></vote>
-    <starr [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></starr>
-    <heart [totalLikes]="post.totalLikes" [iLike]="post.iLike"></heart>
-    <button class="btn btn-primary" (click)="onClick($event)">Submit</button>
-    `,
-                    directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, glicon_component_1.GlIconComponent, heart_component_1.HeartComponent, vote_component_1.VoteComponent]
+                    templateUrl: 'app/app.twitter.template.html',
+                    directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, glicon_component_1.GlIconComponent, heart_component_1.HeartComponent, vote_component_1.VoteComponent, twitter_component_1.TwitterComponent]
                 }), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);
