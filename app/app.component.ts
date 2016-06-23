@@ -5,11 +5,12 @@ import {GlIconComponent} from "./glicon.component";
 import {HeartComponent} from "./heart.component";
 import {VoteComponent} from "./vote.component";
 import {TwitterComponent} from "./twitter.component";
+import {ZippyComponent} from "./zippy.component";
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.twitter.template.html',
-    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent, VoteComponent, TwitterComponent]
+    templateUrl: 'app/app.zipper.template.html',
+    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent, VoteComponent, TwitterComponent, ZippyComponent]
 })
 
 export class AppComponent {

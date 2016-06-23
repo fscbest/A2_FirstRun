@@ -16,7 +16,7 @@ import {TwitterService} from "./twitter.service";
 })
 
 export class TwitterComponent {
-    tweets;
+    tweets = [];
 
     constructor(twitterService: TwitterService){
         this.tweets = twitterService.getTweets();
