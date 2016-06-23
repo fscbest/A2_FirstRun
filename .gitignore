@@ -7,6 +7,9 @@ client/dist/bundle.js
 *.map
 *.component.js
 *.service.js
+*.directive.js
+boot.js
+
 
 
 
