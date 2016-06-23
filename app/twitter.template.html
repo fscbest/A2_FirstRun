@@ -1,8 +1,8 @@
 <div class="twitter">
     <ul class="list-unstyled">
-        <li><tweet [tweet]="tweet"></tweet></li>
-        <li><tweet></tweet></li>
-        <li><tweet></tweet></li>
+        <li *ngFor = "#tweet of tweets">
+            <tweet [tweet]="tweet"></tweet>
+        </li>
     </ul>
 </div>
 

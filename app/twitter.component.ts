@@ -1,5 +1,6 @@
 import {Component, Input, Output } from 'angular2/core'
 import {TweetComponent} from "./tweet.component";
+import {TwitterService} from "./twitter.service";
 
 @Component({
     selector: 'twitter',
@@ -10,16 +11,14 @@ import {TweetComponent} from "./tweet.component";
         width: 400px;
         margin:10px;
     }
-    `]
+    `],
+    providers: [TwitterService]
 })
 
 export class TwitterComponent {
-    tweet = {
-        imageUrl: "http://lorempixel.com/100/100/people/?1",
-        authorName: "Sergio",
-        handler: "handler",
-        message: "message",
-        iLike: true,
-        totalLikes: 22
-    };
+    tweets;
+
+    constructor(twitterService: TwitterService){
+        this.tweets = twitterService.getTweets();
+    }
 }

@@ -4,7 +4,20 @@ import {HeartComponent} from "./heart.component";
 @Component({
     selector: 'tweet',
     templateUrl: 'app/tweet.template.html',
-    directives: [HeartComponent]
+    directives: [HeartComponent],
+    styles: [`
+        .handle {
+            color: #ccc;
+        }
+
+        .media {
+            margin-bottom: 20px;
+        }
+
+        .media-object {
+            border-radius: 3px;
+        }
+    `],
 })
 
 export class TweetComponent {
