@@ -10,7 +10,8 @@ import {ZippyComponent} from "./zippy.component";
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.zipper.template.html',
-    directives: [CoursesComponent, AuthorsComponent, GlIconComponent, HeartComponent, VoteComponent, TwitterComponent, ZippyComponent]
+    directives: [CoursesComponent, AuthorsComponent, GlIconComponent,
+        HeartComponent, VoteComponent, TwitterComponent, ZippyComponent]
 })
 
 export class AppComponent {
