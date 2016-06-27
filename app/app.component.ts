@@ -1,17 +1,21 @@
 import {Component} from 'angular2/core';
-import {CoursesComponent} from "./courses.component";
-import {AuthorsComponent} from "./authors.component";
-import {GlIconComponent} from "./glicon.component";
-import {HeartComponent} from "./heart.component";
-import {VoteComponent} from "./vote.component";
-import {TwitterComponent} from "./twitter.component";
-import {ZippyComponent} from "./zippy.component";
+//import {CoursesComponent} from "./courses.component";
+//import {AuthorsComponent} from "./authors.component";
+//import {GlIconComponent} from "./glicon.component";
+//import {HeartComponent} from "./heart.component";
+//import {VoteComponent} from "./vote.component";
+//import {TwitterComponent} from "./twitter.component";
+//import {ZippyComponent} from "./zippy.component";
+//import {ContactFormComponent} from "./contact-form.component";
+import {SignUpFormComponent} from './signup-form.component'
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.zipper.template.html',
-    directives: [CoursesComponent, AuthorsComponent, GlIconComponent,
-        HeartComponent, VoteComponent, TwitterComponent, ZippyComponent]
+    templateUrl: 'app/app.signup.template.html',
+    directives: [
+        //CoursesComponent, AuthorsComponent, GlIconComponent,
+        //HeartComponent, VoteComponent, TwitterComponent, ZippyComponent, ContactFormComponent,
+        SignUpFormComponent]
 })
 
 export class AppComponent {
