@@ -13,8 +13,9 @@ export class SignUpFormComponent {
         this.form = fb.group({
             username: ['', Validators.compose(
                 [Validators.required,
-                 UsernameValidators.cannotContainSpace
-                ])],
+                 UsernameValidators.cannotContainSpace,
+                ]),
+                UsernameValidators.shouldBeUnique],
             password: ['', Validators.required]
         })
     }
@@ -25,6 +26,11 @@ export class SignUpFormComponent {
     //});
 
     signup(){
+        //var result = authService.login(this.form.value);
+        this.form.find('username').setErrors({
+            invalidLogin: true
+        });
+
         console.log(this.form.value);
     }
 }
