@@ -7,15 +7,16 @@ import {Component} from 'angular2/core';
 //import {TwitterComponent} from "./twitter.component";
 //import {ZippyComponent} from "./zippy.component";
 //import {ContactFormComponent} from "./contact-form.component";
-import {SignUpFormComponent} from './signup-form.component'
+//import {SignUpFormComponent} from './signup-form.component'
+import {ChangePasswFormComponent} from './change_passw-form.component'
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.signup.template.html',
+    templateUrl: 'app/app.changepassw.template.html',
     directives: [
         //CoursesComponent, AuthorsComponent, GlIconComponent,
-        //HeartComponent, VoteComponent, TwitterComponent, ZippyComponent, ContactFormComponent,
-        SignUpFormComponent]
+        //HeartComponent, VoteComponent, TwitterComponent, ZippyComponent, ContactFormComponent, SignUpFormComponent,
+     ChangePasswFormComponent]
 })
 
 export class AppComponent {
