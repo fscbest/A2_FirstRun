@@ -1,4 +1,4 @@
-<form [ngFormModel]="form" (ngSubmit)="signup()">
+<form [ngFormModel]="form" (ngSubmit)="changePassword()">
     <div class="form-group">
         <label for="curr_passw">Current Password</label>
         <input
@@ -45,21 +45,23 @@
                 class="form-control"
                 ngControl="confirm_password"
                 #confirm_password="ngForm">
-        <div
-                *ngIf="form.errors.shouldBeSame"
-                class="alert alert-danger">confirm_password shouldBeSame.
+        <div *ngIf="confirm_password.touched">
+            <div *ngIf="confirm_password.errors">
+                <div
+                        *ngIf="confirm_password.errors.required"
+                        class="alert alert-danger">confirm_password is required.
+                </div>
+                <div
+                        *ngIf="confirm_password.errors.cannotContainSpace"
+                        class="alert alert-danger">confirm_password cannot Contain Space.
+                </div>
+
+            </div>
+            <div
+                    *ngIf="form.errors && form.errors.shouldBeSame"
+                    class="alert alert-danger">confirm_password shouldBeSame.
+            </div>
         </div>
-        <!--<div *ngIf="confirm_password.touched && confirm_password.errors">-->
-            <!--<div-->
-                    <!--*ngIf="confirm_password.errors.required"-->
-                    <!--class="alert alert-danger">confirm_password is required.-->
-            <!--</div>-->
-            <!--<div-->
-                    <!--*ngIf="confirm_password.errors.cannotContainSpace"-->
-                    <!--class="alert alert-danger">confirm_password cannot Contain Space.-->
-            <!--</div>-->
-            <!---->
-        <!--</div>-->
     </div>
     <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Change Password</button>
 </form>
