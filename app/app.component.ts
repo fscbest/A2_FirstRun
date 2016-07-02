@@ -9,14 +9,15 @@ import {Component} from 'angular2/core';
 //import {ContactFormComponent} from "./contact-form.component";
 //import {SignUpFormComponent} from './signup-form.component'
 import {ChangePasswFormComponent} from './change_passw-form.component'
+import {ObbserableComponent} from "./observabble.component";
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.changepassw.template.html',
+    templateUrl: 'app/app.obsevable.template.html',
     directives: [
         //CoursesComponent, AuthorsComponent, GlIconComponent,
         //HeartComponent, VoteComponent, TwitterComponent, ZippyComponent, ContactFormComponent, SignUpFormComponent,
-     ChangePasswFormComponent]
+     ChangePasswFormComponent, ObbserableComponent]
 })
 
 export class AppComponent {

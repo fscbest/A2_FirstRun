@@ -1,5 +1,9 @@
 
 import {Component, Input} from 'angular2/core';
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/filter';
+import {Observable} from "../node_modules/rxjs/Observable";
 
 @Component({
     selector: 'zippy',
@@ -45,10 +49,33 @@ import {Component, Input} from 'angular2/core';
     `
 })
 export class ZippyComponent {
+    constructor() {
+        var keyups = Observable.fromEvent($("#search"), "keyup")
+            .map(e => e.target.value)
+            .filter(textm => text.length >= 3)
+            .debounceTime(400)
+            .distinctUntilChanged()
+        //.flatMap(spotifyService.searchArtists);
+            .flatMap(searchTerm => {
+                var url = "https....";
+                var promise = $.getJSON(url);
+                return Observable.fromPromise(promise);
+            });
+
+
+        var subscription = keyups.subscribe(data => console.log(data));
+        subscription.unsubscribe();
+    }
+
+
+
+
     isExpanded = false;
     @Input() title: string;
         
     toggle(){
         this.isExpanded = !this.isExpanded;
     }
+
+
 }
