@@ -11,14 +11,15 @@ import {Component} from 'angular2/core';
 import {ChangePasswFormComponent} from './change_passw-form.component'
 import {ObbserableComponent} from "./observabble.component";
 import {CallSrvComponent} from "./callService.component";
+import {AvatarComponent} from "./avatar.component";
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.callsrv.template.html',
+    template: '<avatarr></avatarr>',
     directives: [
         //CoursesComponent, AuthorsComponent, GlIconComponent,
         //HeartComponent, VoteComponent, TwitterComponent, ZippyComponent, ContactFormComponent, SignUpFormComponent,
-     ChangePasswFormComponent, ObbserableComponent, CallSrvComponent]
+     ChangePasswFormComponent, ObbserableComponent, CallSrvComponent, AvatarComponent]
 })
 
 export class AppComponent {
